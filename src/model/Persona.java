@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 
 public class Persona {
@@ -11,6 +12,9 @@ public class Persona {
     private String email;
     private String telefono;
     private String pais;
+    
+    //Lista de personas
+    public static ArrayList<Persona> listaPersonas = new ArrayList<>();
 
     public Persona(String nombre, String apellidos, String DNI, String fechaNacimiento,  String email, String telefono, String pais) {
         this.nombre = nombre;
@@ -20,6 +24,7 @@ public class Persona {
         this.email = email;
         this.telefono = telefono;
         this.pais = pais;
+        listaPersonas.add(this);
     }
 
     public String getNombre() {

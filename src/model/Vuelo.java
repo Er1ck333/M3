@@ -18,6 +18,7 @@ public class Vuelo {
     private EnumStatus status;
     private boolean wifiGratis;
     private ArrayList<ArrayList<Integer>> matriz;
+    public static ArrayList<Vuelo> listaVuelos = new ArrayList<>();
 
     public Vuelo(ArrayList<Avion> listaAviones, Ruta ruta, LocalDateTime horaSalida, EnumStatus status, boolean wifiGratis) {
         this.ruta = ruta;
@@ -79,7 +80,7 @@ public class Vuelo {
         this.matriz = matrizs;
 
         
-        
+        listaVuelos.add(this);
     }
 
     public Ruta getRuta() {

@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import model.data.EnumModelos;
 import model.data.EnumTipoAvion;
 
@@ -17,6 +18,8 @@ public class Avion {
     private float distaciaMax;
     private String matricula;
     private boolean status;
+    
+    public static ArrayList<Avion> listaAviones = new ArrayList<>();
 
 
     public Avion(EnumTipoAvion tipoAvion, EnumModelos modeloAvion, float distaciaMax, String matricula) {
@@ -25,6 +28,8 @@ public class Avion {
         this.distaciaMax = distaciaMax;
         this.matricula = matricula;
         this.status = true;
+        
+        listaAviones.add(this);
     }
 
     public Avion(){

@@ -8,11 +8,15 @@ public class Aeropuerto {
     private String codigo;
     private EnumCiudades ciudad;
     private ArrayList puertas;
+    
+    //Lista de aeropuertos
+    public static ArrayList<Aeropuerto> listaAeropuertos = new ArrayList<>();
 
     public Aeropuerto(String nombre, String codigo, EnumCiudades ciudad) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.ciudad = ciudad;
+        listaAeropuertos.add(this);
 
     }
 

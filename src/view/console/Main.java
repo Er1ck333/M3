@@ -11,7 +11,7 @@ import model.Avion;
 import model.Billete;
 import model.BilleteEjecutivo;
 import model.BilletePrimeraClase;
-import model.BilleteTurista;
+import model.BilleteTurista;    
 import model.Persona;
 import model.Ruta;
 import model.Vuelo;
@@ -29,10 +29,12 @@ import com.itextpdf.barcodes.Barcode128;
 import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import java.io.File;
+import javax.swing.SwingUtilities;
 
 // Importar excepciones personalizadas
 import model.exceptions.SeatBookedException;
 import model.exceptions.MatriculaRepetidaException;
+import view.gui.NewJFrame;
 
 public class Main {
 
@@ -44,7 +46,11 @@ public class Main {
     public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static void main(String[] args) {
-
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new NewJFrame().setVisible(true);
+            }
+        });
         // Añadir aviones validando matrícula duplicada
         try {
             addAvion(new Avion(EnumTipoAvion.RUTAS_CORTAS, EnumModelos.AIRBUS_A320, 2000, "651AS"));
